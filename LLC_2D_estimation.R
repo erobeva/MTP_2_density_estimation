@@ -60,7 +60,9 @@ if(FALSE){
 
 #---- Example 2: reproduce the plot in the paper
 #load(file = "npoints100date2017-11-09.Rdata")
-load(file="50PointsJun19.Rdata")
+#load(file="50PointsJun19.Rdata")
+fname = "60PointsJun22.Rdata"
+load(file=fname)
 X = LS[[1]]
 npoints = dim(X)[1]
 X = round(X,1)*10
@@ -77,10 +79,10 @@ S = cgm(initialGuess, sigmafuncS(info$xlist,info$w.vec, eps), gradsigmafuncS(inf
 #plot the results
 scatterplot3d(info$xlist[,1],info$xlist[,2],exp(S$par), highlight.3d=TRUE)
 #save
-save(list = ls(), file="llc-output-June20.Rdata")
+save(list = ls(), file=paste("llc-output",fname,sep=""))
 #--- fancier plot code
 #pdf(file = "mpt2-vs-ell.pdf")
-pdf(file = "mpt2-vs-ell-June20.pdf")
+pdf(file = "mpt2-vs-ell-June22.pdf")
 par(mfrow = c(2,2))
 g = LS[[4]]
 M = mesh(g$x,g$y)
