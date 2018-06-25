@@ -61,7 +61,8 @@ if(FALSE){
 #---- Example 2: reproduce the plot in the paper
 #load(file = "npoints100date2017-11-09.Rdata")
 #load(file="50PointsJun19.Rdata")
-fname = "60PointsJun22.Rdata"
+#fname = "60PointsJun22.Rdata"
+fname = "55points2017-11-09.Rdata"
 load(file=fname)
 X = LS[[1]]
 npoints = dim(X)[1]
