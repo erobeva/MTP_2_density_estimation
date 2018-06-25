@@ -71,6 +71,8 @@ w = rep(1/npoints,npoints)
 C = polytrope(X)
 V = polVertex.2d(C)
 info = get.ell.ineq(X,w,C,V)
+#rescale the x coordinate of info to the original scale 
+info$xlist <- info$xlist/10
 #start with an initial guess = log of independent Gaussian evaluated at these points
 initialGuess = -1/100*apply(info$xlist, 1, function(y) sum(y**2))
 eps = 0.001
